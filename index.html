@@ -3,43 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
     <title>Calculette</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <div class="calculator">
-          <div class="screen"></div>
-            <table>
-              <tr>
-                <td click="getNumber('ch', '7')">7</td>
-                <td click="getNumber('ch', '8')">8</td>
-                <td click="getNumber('ch', '9')">9</td>
-                <td click="getNumber('op', 'x')">x</td>
-              </tr>
-              <tr>
-                <td click="getNumber('ch', '4')">4</td>
-                <td click="getNumber('ch', '5')">5</td>
-                <td click="getNumber('ch', '6')">6</td>
-                <td click="getNumber('op', '-')">-</td>
-              </tr>
-              <tr>
-                <td click="getNumber('ch', '1')">1</td>
-                <td click="getNumber('ch', '2')">2</td>
-                <td click="getNumber('ch', '3')">3</td>
-                <td click="getNumber('op', '+')">+</td>
-              </tr>
-              <tr>
-                <td click="getNumber('ch', '0')">0</td>
-                <td click="getNumber('dec', '.')">.</td>
-                <td click="getNumber('sp', 'ce')">CE</td>
-                <td click="getNumber('eg', '=')">=</td>
-              </tr>
-            </table>
-          </div>
+      <div class="calculator">
+        <input class="screen" type="text" name="screen" value="0" disabled>
+        <table>
+          <tr>
+            <td onclick="calculer('ch', '7')">7</td>
+            <td onclick="calculer('ch', '8')">8</td>
+            <td onclick="calculer('ch', '9')">9</td>
+            <td onclick="calculer('op', 'x')">x</td>
+          </tr>
+          <tr>
+            <td onclick="calculer('ch', '4')">4</td>
+            <td onclick="calculer('ch', '5')">5</td>
+            <td onclick="calculer('ch', '6')">6</td>
+            <td onclick="calculer('op', '-')">-</td>
+          </tr>
+          <tr>
+            <td onclick="calculer('ch', '1')">1</td>
+            <td onclick="calculer('ch', '2')">2</td>
+            <td onclick="calculer('ch', '3')">3</td>
+            <td onclick="calculer('op', '+')">+</td>
+          </tr>
+          <tr>
+            <td colspan="2"onclick="calculer('ch', '0')">0</td>
+            <td onclick="calculer('spe', '.')">.</td>
+            <td onclick="calculer('op', '/')">/</td>
+          </tr>
+          <tr>
+            <td colspan="2" onclick="calculer('spe', 'CE')">CE</td>
+            <td colspan="2" onclick="calculer('equal', '=')">=</td>
+          </tr>
+        </table>
       </div>
-      
+    </div>
+    
+    
+    <script src="./main.js"></script>
 </body>
 </html>
+
+<style>
+.calculator {
+    margin: 100px auto;
+    border: 1px solid grey;
+    width: 150px;
+    padding: 0.3rem;
+    border-radius: 3px;
+    box-shadow: 4px 4px 1px rgba(0,0,0,0.6);
+}
+
+.screen {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 2rem;
+    padding: 0 0.5rem 0 0;
+    background: #000;
+    text-align: right;
+    color: lightgreen;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+table {
+    margin: 0 auto;
+}
+
+tr {
+    width: 100%;
+    text-align: center;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+
+td:hover {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+</style>
 
 
